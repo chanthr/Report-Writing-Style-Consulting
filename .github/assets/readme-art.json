@@ -1,0 +1,18 @@
+{
+  "eyebrow": "REPORT WRITING SKILL",
+  "title": "Consulting Report",
+  "subtitle": "Korean consulting-style reports by AI agents, from outline to Word",
+  "steps": [
+    {"who": "Agent", "title": "Outline", "desc": "Answer on top, reasons below. You approve the outline first"},
+    {"who": "Agent", "title": "Write", "desc": "Every number gets its meaning, a judgment and a next step"},
+    {"who": "Tools", "title": "Exhibits", "desc": "Orange and gray charts, plain tables, marked screenshots"},
+    {"who": "Tools", "title": "Assemble", "desc": "A Word file with a fixed layout. Your edits are never overwritten"},
+    {"who": "You", "title": "Review", "desc": "Run the checklist, then finish in Word"}
+  ],
+  "badges": [
+    {"file": "badge-license", "label": "license", "message": "MIT", "color": "neutral"},
+    {"file": "badge-skill", "label": "skill", "message": "Claude Code", "color": "claude"},
+    {"file": "badge-output", "label": "output", "message": "Word + PNG", "color": "info"},
+    {"file": "badge-lang", "label": "reports", "message": "Korean", "color": "#8250DF"}
+  ]
+}
