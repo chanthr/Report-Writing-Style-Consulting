@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>A사 커피 (예시 화면)</title>
+<!-- 캡처 가공 예시에 쓰는 가상 쇼핑몰 화면. capture-source.png 는 이 파일을 1280x900 으로 찍은 것이다 -->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1280px; height: 900px; background: #fff; color: #222; font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+  header { height: 64px; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; padding: 0 60px; gap: 40px; }
+  header b { font-size: 22px; letter-spacing: -0.5px; }
+  header nav { display: flex; gap: 28px; font-size: 15px; color: #555; }
+  main { display: grid; grid-template-columns: 520px 1fr; gap: 56px; padding: 40px 60px 0; }
+  .photo { height: 400px; background: linear-gradient(135deg, #8a5a3c, #c79a6b); display: flex; align-items: flex-end; padding: 20px; color: #fff; font-size: 14px; }
+  h1 { font-size: 28px; margin-bottom: 10px; }
+  .price { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
+  .opt { border: 1px solid #ddd; padding: 14px 16px; margin-bottom: 10px; font-size: 15px; display: flex; justify-content: space-between; }
+  .opt.on { border-color: #222; }
+  .btn { margin-top: 16px; background: #222; color: #fff; text-align: center; padding: 16px; font-size: 16px; font-weight: 700; }
+  section.reviews { padding: 34px 60px 0; }
+  section.reviews h2 { font-size: 19px; margin-bottom: 12px; }
+  .review { border-top: 1px solid #eee; padding: 13px 0; font-size: 15px; line-height: 1.5; display: grid; grid-template-columns: 90px 1fr 110px; gap: 16px; }
+  .review span { color: #888; font-size: 14px; }
+  footer { position: absolute; bottom: 14px; left: 60px; font-size: 13px; color: #999; }
+</style>
+</head>
+<body>
+<header>
+  <b>A사 커피</b>
+  <nav><span>원두</span><span>드립백</span><span>정기구독</span><span>선물 세트</span></nav>
+</header>
+<main>
+  <div class="photo">하우스 블렌드 200g</div>
+  <div>
+    <h1>하우스 블렌드 원두 200g</h1>
+    <div class="price">14,000원</div>
+    <div class="opt"><span>한 번 구매</span><span>14,000원</span></div>
+    <div class="opt on"><span>정기구독 (2주마다)</span><span>12,600원</span></div>
+    <div class="btn">구매하기</div>
+  </div>
+</main>
+<section class="reviews" id="reviews">
+  <h2>구매 후기 4.8점 (312건)</h2>
+  <div class="review"><span>★★★★★</span><div>산미가 적고 고소해서 매일 마시기 좋아요.</div><span>2026.06.21</span></div>
+  <div class="review" id="late"><span>★★★☆☆</span><div>맛은 좋은데 배송이 사흘 늦게 와서 원두가 떨어졌어요.</div><span>2026.06.18</span></div>
+  <div class="review"><span>★★★★☆</span><div>정기구독으로 바꾸니 주문을 잊을 일이 없네요.</div><span>2026.06.12</span></div>
+</section>
+<footer>예시 화면입니다. 회사와 상품은 가상입니다.</footer>
+</body>
+</html>

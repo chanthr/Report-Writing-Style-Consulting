@@ -1,0 +1,43 @@
+name: Bug report
+description: A tool draws, crops or builds something different from the rules or the docs.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This repository is public.** Leave out client names, real report numbers, screenshots of private pages and secrets. Use made-up data to reproduce.
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Tool
+      options:
+        - render.mjs (charts)
+        - captures.py (screenshots)
+        - report_docx.py (Word)
+        - SKILL.md or a rule file
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran and what you got. Attach the PNG or a screenshot of the page if it helps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Node and Python versions, Word or LibreOffice version if it is about the document
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Check
+      options:
+        - label: I removed client names, real numbers, private screenshots and secrets
+          required: true

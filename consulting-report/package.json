@@ -1,0 +1,13 @@
+{
+  "name": "consulting-report-tools",
+  "private": true,
+  "description": "Renders report charts to PNG for the consulting-report skill",
+  "type": "module",
+  "scripts": {
+    "render": "node tools/render.mjs",
+    "example": "node tools/render.mjs examples/exhibits.json --out examples/out"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

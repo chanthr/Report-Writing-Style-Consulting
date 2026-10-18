@@ -1,0 +1,93 @@
+{
+  "_설명": "가상의 커피 브랜드 A사 예시. 회사와 숫자는 모두 가상이다. 도표 여섯 종류와 캡처 가공 한 건을 담았다.",
+  "_출처": "가상 데이터. 기간은 2026년 1~6월, 비교는 2025년 1~6월. 주문은 결제 완료 기준 건수. 도표 1의 2026년 합계(5,430건)는 도표 2의 월평균 합계와 같다.",
+  "charts": [
+    {
+      "id": "fig1-channel-orders",
+      "type": "column",
+      "height": 260,
+      "barWidth": 38,
+      "categories": ["자사몰", "배달앱", "오픈마켓", "정기구독"],
+      "series": [
+        { "name": "2026년 상반기", "values": [1580, 2180, 910, 760] },
+        { "name": "2025년 상반기", "values": [1240, 2310, 860, 420] }
+      ]
+    },
+    {
+      "id": "fig2-monthly-mix",
+      "type": "column",
+      "stacked": true,
+      "height": 270,
+      "barWidth": 30,
+      "categories": ["1월", "2월", "3월", "4월", "5월", "6월"],
+      "series": [
+        { "name": "정기구독", "values": [610, 660, 720, 790, 840, 940] },
+        { "name": "재구매", "values": [2740, 2820, 2900, 2980, 3130, 3230] },
+        { "name": "신규", "values": [1800, 1750, 1720, 1690, 1650, 1610] }
+      ]
+    },
+    {
+      "id": "fig3-repurchase-rate",
+      "type": "line",
+      "height": 250,
+      "valueLabels": true,
+      "valueSuffix": "%",
+      "yTicks": [0, 10, 20, 30, 40, 50],
+      "categories": ["1월", "2월", "3월", "4월", "5월", "6월"],
+      "series": [
+        { "name": "자사몰", "values": [38, 40, 41, 43, 44, 46] },
+        { "name": "배달앱", "values": [21, 20, 22, 21, 20, 19], "color": "#a2a7b1" }
+      ]
+    },
+    {
+      "id": "fig4-inquiries",
+      "type": "bar",
+      "labelWidth": 110,
+      "rowHeight": 40,
+      "categories": ["배송 지연", "원두 신선도", "포장 파손", "결제 오류", "정기구독 변경", "기타"],
+      "series": [
+        {
+          "name": "문의 수",
+          "values": [412, 268, 154, 97, 83, 61],
+          "pointColors": ["#dc5218", "#dc5218", "#dc5218", "#a2a7b1", "#a2a7b1", "#a2a7b1"]
+        }
+      ]
+    },
+    {
+      "id": "fig5-traffic-sources",
+      "type": "donut",
+      "size": 180,
+      "slices": [
+        { "name": "검색", "value": 34 },
+        { "name": "SNS", "value": 27 },
+        { "name": "직접 방문", "value": 18 },
+        { "name": "AI 서비스 답변", "value": 9 },
+        { "name": "이메일", "value": 8 },
+        { "name": "기타", "value": 4 }
+      ]
+    },
+    {
+      "id": "fig6-region-panels",
+      "type": "column",
+      "height": 170,
+      "categories": ["1분기", "2분기"],
+      "panels": [
+        { "title": "서울", "series": [
+          { "name": "2026년", "values": [180, 230] },
+          { "name": "2025년", "values": [110, 130] }
+        ] },
+        { "title": "경기", "series": [
+          { "name": "2026년", "values": [120, 170] },
+          { "name": "2025년", "values": [70, 85] }
+        ] },
+        { "title": "그 밖 지역", "series": [
+          { "name": "2026년", "values": [90, 130] },
+          { "name": "2025년", "values": [50, 60] }
+        ] }
+      ]
+    }
+  ],
+  "captures": [
+    { "id": "cap1-product-reviews", "file": "capture-source.png", "crop": [0, 0, 1280, 734], "marks": [[54, 618, 1172, 60]] }
+  ]
+}
