@@ -15,7 +15,7 @@
 <p align="center">
   <b>An agent skill that writes Korean business reports the way consultants do, and builds the Word file.</b><br>
   Answer first, every number explained, restrained orange and gray exhibits, a fixed layout.<br>
-  Copy one folder into your skills directory and ask for a report.
+  Install it with one <code>npx</code> command and ask for a report.
 </p>
 
 <p align="center">
@@ -33,28 +33,47 @@
 
 ## Quick start
 
-You need Node 18 or later and Python 3.9 or later.
-
 | Step | Do this |
 | :---: | --- |
-| 1 | Copy the skill folder into Claude Code's skills directory |
+| 1 | Install the skill with one command |
 | 2 | Install the chart and Word tools once |
-| 3 | In Claude Code, ask for a report (or type `/consulting-report`) |
+| 3 | Ask your agent for a report, or type `/consulting-report` in Claude Code |
+
+**1. Install the skill.** The open [`skills`](https://github.com/vercel-labs/skills) installer puts it into Claude Code, Codex, Cursor and 70 more agents.
+
+```bash
+npx skills add chanthr/Report-Writing-Style-Consulting
+```
+
+It asks which agents to install for, and whether to install for this project or for your user.
+To skip the questions and install for Claude Code in every project:
+
+```bash
+npx skills add chanthr/Report-Writing-Style-Consulting -g -a claude-code -y
+```
+
+**2. Install the tools once.** Charts need Node 18 or later, the Word file needs Python 3.9 or later.
+If you skip this, the agent offers to run it the first time it needs the tools.
+
+```bash
+cd ~/.claude/skills/consulting-report   # in a project: .claude/skills/consulting-report
+npm install                             # Playwright, used to draw charts
+npx playwright install chromium         # the browser that draws them
+pip install -r requirements.txt         # Pillow and python-docx
+```
+
+<details>
+<summary>Install without npx</summary>
 
 ```bash
 git clone https://github.com/chanthr/Report-Writing-Style-Consulting.git
-cp -r Report-Writing-Style-Consulting/consulting-report ~/.claude/skills/
-
-cd ~/.claude/skills/consulting-report
-npm install                       # Playwright, used to draw charts
-npx playwright install chromium   # the browser that draws them
-pip install -r requirements.txt   # Pillow and python-docx
+cp -r Report-Writing-Style-Consulting/skills/consulting-report ~/.claude/skills/
 ```
 
-To use it in one project only, copy the folder to `<project>/.claude/skills/` instead.
+For other agents, copy the folder into that agent's skills directory, or point the agent at
+[`skills/consulting-report/SKILL.md`](skills/consulting-report/SKILL.md). The rules are plain Markdown and the tools are plain scripts.
 
-Other agents (Codex, Cursor, Gemini CLI) can use it too. Point the agent at
-[`consulting-report/SKILL.md`](consulting-report/SKILL.md); the rules are plain Markdown and the tools are plain scripts.
+</details>
 
 ## How it works
 
@@ -70,11 +89,11 @@ Other agents (Codex, Cursor, Gemini CLI) can use it too. Point the agent at
 
 | Step | Who | What happens | Rule file |
 | --- | --- | --- | --- |
-| Outline | Agent | Sets the one question the report answers and the answer on top, then shows the outline as a tree and waits for your OK | [`1-structure.md`](consulting-report/rules/1-structure.md) |
-| Write | Agent | Writes each chapter as data, meaning, judgment and next step, in plain business Korean | [`2-style.md`](consulting-report/rules/2-style.md) |
-| Exhibits | Tools | Draws charts from a JSON file, crops screenshots and draws an orange box where it matters | [`3-exhibits.md`](consulting-report/rules/3-exhibits.md) |
-| Assemble | Tools | Builds the `.docx` with a fixed layout. Refuses to overwrite a file someone already edited | [`4-document.md`](consulting-report/rules/4-document.md) |
-| Review | You | Goes through the checklist, then finishes the wording in Word | [`5-checklist.md`](consulting-report/rules/5-checklist.md) |
+| Outline | Agent | Sets the one question the report answers and the answer on top, then shows the outline as a tree and waits for your OK | [`1-structure.md`](skills/consulting-report/rules/1-structure.md) |
+| Write | Agent | Writes each chapter as data, meaning, judgment and next step, in plain business Korean | [`2-style.md`](skills/consulting-report/rules/2-style.md) |
+| Exhibits | Tools | Draws charts from a JSON file, crops screenshots and draws an orange box where it matters | [`3-exhibits.md`](skills/consulting-report/rules/3-exhibits.md) |
+| Assemble | Tools | Builds the `.docx` with a fixed layout. Refuses to overwrite a file someone already edited | [`4-document.md`](skills/consulting-report/rules/4-document.md) |
+| Review | You | Goes through the checklist, then finishes the wording in Word | [`5-checklist.md`](skills/consulting-report/rules/5-checklist.md) |
 
 </details>
 
@@ -88,11 +107,11 @@ The rules are written in Korean, for Korean business reports. The chart, screens
 
 | File | Covers |
 | --- | --- |
-| [`1-structure.md`](consulting-report/rules/1-structure.md) | The pyramid principle: answer on top, MECE groups, SCQA introductions, data blocks that end in an action, one level per list, a lean appendix |
-| [`2-style.md`](consulting-report/rules/2-style.md) | 15 rules for plain business Korean: one message per sentence, 40 to 50 characters, active and present tense, no filler, no crammed lines |
-| [`3-exhibits.md`](consulting-report/rules/3-exhibits.md) | The exhibit grammar, which chart to pick, the JSON format, screenshot crops and marks |
-| [`4-document.md`](consulting-report/rules/4-document.md) | The Word layout, the build script, and how to add to a document a person already edited |
-| [`5-checklist.md`](consulting-report/rules/5-checklist.md) | What to check before the report leaves your hands |
+| [`1-structure.md`](skills/consulting-report/rules/1-structure.md) | The pyramid principle: answer on top, MECE groups, SCQA introductions, data blocks that end in an action, one level per list, a lean appendix |
+| [`2-style.md`](skills/consulting-report/rules/2-style.md) | 15 rules for plain business Korean: one message per sentence, 40 to 50 characters, active and present tense, no filler, no crammed lines |
+| [`3-exhibits.md`](skills/consulting-report/rules/3-exhibits.md) | The exhibit grammar, which chart to pick, the JSON format, screenshot crops and marks |
+| [`4-document.md`](skills/consulting-report/rules/4-document.md) | The Word layout, the build script, and how to add to a document a person already edited |
+| [`5-checklist.md`](skills/consulting-report/rules/5-checklist.md) | What to check before the report leaves your hands |
 
 ## Exhibits
 
@@ -101,20 +120,20 @@ Titles and sources are written as Word text above and below each picture, so the
 
 <table>
   <tr>
-    <td width="50%"><img alt="Grouped columns" src="consulting-report/examples/out/fig1-channel-orders.png"><br><sub>Grouped columns: <code>column</code></sub></td>
-    <td width="50%"><img alt="Stacked columns" src="consulting-report/examples/out/fig2-monthly-mix.png"><br><sub>Stacked columns: <code>column</code> + <code>stacked</code></sub></td>
+    <td width="50%"><img alt="Grouped columns" src="skills/consulting-report/examples/out/fig1-channel-orders.png"><br><sub>Grouped columns: <code>column</code></sub></td>
+    <td width="50%"><img alt="Stacked columns" src="skills/consulting-report/examples/out/fig2-monthly-mix.png"><br><sub>Stacked columns: <code>column</code> + <code>stacked</code></sub></td>
   </tr>
   <tr>
-    <td><img alt="Line chart" src="consulting-report/examples/out/fig3-repurchase-rate.png"><br><sub>Lines: <code>line</code></sub></td>
-    <td><img alt="Horizontal bars with highlighted points" src="consulting-report/examples/out/fig4-inquiries.png"><br><sub>Horizontal bars with per-bar colors: <code>bar</code> + <code>pointColors</code></sub></td>
+    <td><img alt="Line chart" src="skills/consulting-report/examples/out/fig3-repurchase-rate.png"><br><sub>Lines: <code>line</code></sub></td>
+    <td><img alt="Horizontal bars with highlighted points" src="skills/consulting-report/examples/out/fig4-inquiries.png"><br><sub>Horizontal bars with per-bar colors: <code>bar</code> + <code>pointColors</code></sub></td>
   </tr>
   <tr>
-    <td><img alt="Donut chart" src="consulting-report/examples/out/fig5-traffic-sources.png"><br><sub>Donut: <code>donut</code></sub></td>
-    <td><img alt="Marked screenshot" src="consulting-report/examples/out/cap1-product-reviews.png"><br><sub>Screenshot, cropped and marked: <code>captures.py</code></sub></td>
+    <td><img alt="Donut chart" src="skills/consulting-report/examples/out/fig5-traffic-sources.png"><br><sub>Donut: <code>donut</code></sub></td>
+    <td><img alt="Marked screenshot" src="skills/consulting-report/examples/out/cap1-product-reviews.png"><br><sub>Screenshot, cropped and marked: <code>captures.py</code></sub></td>
   </tr>
 </table>
 
-Each chart is a few lines of JSON. Every chart type is in [`examples/exhibits.json`](consulting-report/examples/exhibits.json).
+Each chart is a few lines of JSON. Every chart type is in [`examples/exhibits.json`](skills/consulting-report/examples/exhibits.json).
 
 ```json
 {
@@ -133,22 +152,22 @@ node tools/render.mjs data.json --out exhibits          # one PNG per chart, 3x 
 python3 tools/captures.py data.json --src raw --out exhibits
 ```
 
-The font (Freesentation) ships in [`consulting-report/fonts/`](consulting-report/fonts), so charts look the same on any machine.
+The font (Freesentation) ships in [`skills/consulting-report/fonts/`](skills/consulting-report/fonts), so charts look the same on any machine.
 To change colors, add `"colors"` at the top of the JSON. For another number format, set `"locale"`.
 
 ## Sample report
 
-A short report for a made-up coffee brand, built by [`examples/build_report.py`](consulting-report/examples/build_report.py).
+A short report for a made-up coffee brand, built by [`examples/build_report.py`](skills/consulting-report/examples/build_report.py).
 The company and every number in it are fictional. The script recomputes each number in the text from the chart data and stops if one disagrees.
 
 <p align="center">
   <img alt="Pages 1 to 3 of the sample report" src=".github/assets/sample-pages.png" width="100%">
 </p>
 
-Open the whole thing: [`sample-report.pdf`](consulting-report/examples/out/sample-report.pdf) or [`sample-report.docx`](consulting-report/examples/out/sample-report.docx).
+Open the whole thing: [`sample-report.pdf`](skills/consulting-report/examples/out/sample-report.pdf) or [`sample-report.docx`](skills/consulting-report/examples/out/sample-report.docx).
 
 ```bash
-cd consulting-report
+cd skills/consulting-report
 npm run example                                                   # charts
 python3 tools/captures.py examples/exhibits.json --src examples --out examples/out
 python3 examples/build_report.py --overwrite                      # the .docx
@@ -162,13 +181,13 @@ To use another font, set `REPORT_FONT`. A `.docx` does not carry its fonts, so s
 
 | Part | File | What it is |
 | --- | --- | --- |
-| Skill | [`consulting-report/SKILL.md`](consulting-report/SKILL.md) | Entry point: when to use it, the hard rules, the steps |
-| Rules | [`consulting-report/rules/`](consulting-report/rules) | Structure, style, exhibits, document, checklist |
-| Tools | [`tools/render.mjs`](consulting-report/tools/render.mjs), [`tools/chart.html`](consulting-report/tools/chart.html) | JSON to chart PNG |
-| | [`tools/captures.py`](consulting-report/tools/captures.py) | Screenshot crop and orange marks |
-| | [`tools/report_docx.py`](consulting-report/tools/report_docx.py) | Word layout and building blocks, plus helpers to add to an edited document |
-| Examples | [`consulting-report/examples/`](consulting-report/examples) | Chart data, a mock screenshot, the build script and its output |
-| Fonts | [`consulting-report/fonts/`](consulting-report/fonts) | Freesentation Regular, Medium, Bold (SIL OFL 1.1) |
+| Skill | [`skills/consulting-report/SKILL.md`](skills/consulting-report/SKILL.md) | Entry point: when to use it, the hard rules, the steps |
+| Rules | [`skills/consulting-report/rules/`](skills/consulting-report/rules) | Structure, style, exhibits, document, checklist |
+| Tools | [`tools/render.mjs`](skills/consulting-report/tools/render.mjs), [`tools/chart.html`](skills/consulting-report/tools/chart.html) | JSON to chart PNG |
+| | [`tools/captures.py`](skills/consulting-report/tools/captures.py) | Screenshot crop and orange marks |
+| | [`tools/report_docx.py`](skills/consulting-report/tools/report_docx.py) | Word layout and building blocks, plus helpers to add to an edited document |
+| Examples | [`skills/consulting-report/examples/`](skills/consulting-report/examples) | Chart data, a mock screenshot, the build script and its output |
+| Fonts | [`skills/consulting-report/fonts/`](skills/consulting-report/fonts) | Freesentation Regular, Medium, Bold (SIL OFL 1.1) |
 | README art | [`.github/assets/`](.github/assets) | Banner, flow and badges, built by `make.py` from `readme-art.json` |
 
 ## Contributing
@@ -182,5 +201,5 @@ This repository is public. Leave out client names, real report numbers, screensh
 
 ## License
 
-Code and documents: [MIT](LICENSE). Fonts in `consulting-report/fonts/` and `.github/assets/fonts/`: Freesentation by PT&,
-[SIL Open Font License 1.1](consulting-report/fonts/OFL.txt).
+Code and documents: [MIT](LICENSE). Fonts in `skills/consulting-report/fonts/` and `.github/assets/fonts/`: Freesentation by PT&,
+[SIL Open Font License 1.1](skills/consulting-report/fonts/OFL.txt).
