@@ -75,11 +75,15 @@ python3 $SKILL/tools/captures.py build/data.json --src 캡처원본 --out 시각
 
 ## 처음 한 번
 
+도표나 문서를 처음 만들 때 `$SKILL/node_modules`가 없거나 `python3 -c "import docx, PIL"`이 실패하면, 사용자에게 아래 명령을 보여 주고 허락을 받아 실행합니다.
+
 ```bash
 cd $SKILL
 npm install                       # 도표용 Playwright
 npx playwright install chromium   # 도표를 그릴 브라우저
 pip install -r requirements.txt   # Pillow, python-docx
 ```
+
+`npx skills add`로 설치했다면 `$SKILL`은 보통 `~/.claude/skills/consulting-report`나 프로젝트의 `.claude/skills/consulting-report`입니다.
 
 본보기는 `$SKILL/examples/`에 있습니다. 가상의 커피 브랜드 A사 보고서이고, 회사와 숫자는 모두 가상입니다.
