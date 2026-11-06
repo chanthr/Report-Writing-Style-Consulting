@@ -1,0 +1,41 @@
+{
+  "figures": [
+    {
+      "name": "rules",
+      "type": "tiles",
+      "cols": 3,
+      "tiles": [
+        {
+          "icon": "list-tree",
+          "title": "Structure",
+          "tag": "1-structure.md",
+          "desc": "The pyramid principle: answer on top, MECE groups, SCQA introductions, data blocks that end in an action."
+        },
+        {
+          "icon": "pen-line",
+          "title": "Style",
+          "tag": "2-style.md",
+          "desc": "15 rules for plain business Korean: one message per sentence, 40 to 50 characters, no filler."
+        },
+        {
+          "icon": "chart-column",
+          "title": "Exhibits",
+          "tag": "3-exhibits.md",
+          "desc": "The exhibit grammar, which chart to pick, the JSON format, screenshot crops and marks."
+        },
+        {
+          "icon": "file-text",
+          "title": "Document",
+          "tag": "4-document.md",
+          "desc": "The Word layout, the build script, and adding to a document a person already edited."
+        },
+        {
+          "icon": "list-checks",
+          "title": "Checklist",
+          "tag": "5-checklist.md",
+          "desc": "What to check before the report leaves your hands."
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,5 @@
 <h1 align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/ko/banner-dark.svg">
-    <img alt="컨설팅 보고서" src=".github/assets/ko/banner-light.svg" width="100%">
-  </picture>
+  <img alt="컨설팅 보고서" src=".github/assets/ko/banner.svg" width="100%">
 </h1>
 
 <p align="center">
@@ -78,10 +75,7 @@ cp -r Report-Writing-Style-Consulting/skills/consulting-report ~/.claude/skills/
 ## 작업 흐름
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/ko/flow-dark.svg">
-    <img alt="작업 흐름: 골격 잡기, 본문 쓰기, 도표 만들기, 문서 조립, 점검" src=".github/assets/ko/flow-light.svg" width="100%">
-  </picture>
+  <img alt="작업 흐름: 골격 잡기, 본문 쓰기, 도표 만들기, 문서 조립, 점검" src=".github/assets/ko/flow.svg" width="100%">
 </p>
 
 <details>
@@ -109,6 +103,15 @@ cp -r Report-Writing-Style-Consulting/skills/consulting-report ~/.claude/skills/
 
 규칙 문서는 한국어 비즈니스 보고서를 기준으로 썼습니다. 도표, 캡처, Word 도구는 어느 언어에서나 쓸 수 있습니다.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/ko/rules-dark.svg">
+  <img alt="규칙 문서: 구조, 문체, 도표, 문서, 점검" src=".github/assets/ko/rules-light.svg" width="100%">
+</picture>
+
+<details>
+<summary>규칙 문서 열기</summary>
+<br>
+
 | 문서 | 다루는 것 |
 | --- | --- |
 | [`1-structure.md`](skills/consulting-report/rules/1-structure.md) | 피라미드 원칙. 결론 먼저, MECE 묶기, SCQA 도입부, 액션으로 닫는 데이터 블록, 레벨링, 얇은 부록 |
@@ -116,6 +119,8 @@ cp -r Report-Writing-Style-Consulting/skills/consulting-report ~/.claude/skills/
 | [`3-exhibits.md`](skills/consulting-report/rules/3-exhibits.md) | 도표 문법, 도표 종류 고르기, JSON 형식, 캡처 자르기와 테두리 |
 | [`4-document.md`](skills/consulting-report/rules/4-document.md) | Word 레이아웃, 빌드 스크립트, 사람이 고친 문서에 덧붙이는 법 |
 | [`5-checklist.md`](skills/consulting-report/rules/5-checklist.md) | 보고서를 넘기기 전 점검 |
+
+</details>
 
 ## 도표
 

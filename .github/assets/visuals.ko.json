@@ -1,0 +1,42 @@
+{
+  "out_dir": "ko",
+  "figures": [
+    {
+      "name": "rules",
+      "type": "tiles",
+      "cols": 3,
+      "tiles": [
+        {
+          "icon": "list-tree",
+          "title": "구조",
+          "tag": "1-structure.md",
+          "desc": "피라미드 원칙. 결론 먼저, MECE 묶기, SCQA 도입부, 액션으로 닫는 데이터 블록을 다룹니다."
+        },
+        {
+          "icon": "pen-line",
+          "title": "문체",
+          "tag": "2-style.md",
+          "desc": "비즈니스 한국어 15개 규칙. 한 문장 한 메시지, 40~50자, 군더더기 빼기를 다룹니다."
+        },
+        {
+          "icon": "chart-column",
+          "title": "도표",
+          "tag": "3-exhibits.md",
+          "desc": "도표 문법, 도표 종류 고르기, JSON 형식, 캡처 자르기와 테두리를 다룹니다."
+        },
+        {
+          "icon": "file-text",
+          "title": "문서",
+          "tag": "4-document.md",
+          "desc": "Word 레이아웃, 빌드 스크립트, 사람이 고친 문서에 덧붙이는 법을 다룹니다."
+        },
+        {
+          "icon": "list-checks",
+          "title": "점검",
+          "tag": "5-checklist.md",
+          "desc": "보고서를 넘기기 전에 확인할 것을 모았습니다."
+        }
+      ]
+    }
+  ]
+}
