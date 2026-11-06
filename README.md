@@ -1,8 +1,5 @@
 <h1 align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
-    <img alt="Consulting Report" src=".github/assets/banner-light.svg" width="100%">
-  </picture>
+  <img alt="Consulting Report" src=".github/assets/banner.svg" width="100%">
 </h1>
 
 <p align="center">
@@ -78,10 +75,7 @@ For other agents, copy the folder into that agent's skills directory, or point t
 ## How it works
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/flow-dark.svg">
-    <img alt="How it works: Outline, Write, Exhibits, Assemble, Review" src=".github/assets/flow-light.svg" width="100%">
-  </picture>
+  <img alt="How it works: Outline, Write, Exhibits, Assemble, Review" src=".github/assets/flow.svg" width="100%">
 </p>
 
 <details>
@@ -105,6 +99,15 @@ never overwrite a document a person edited, reuse the tools instead of copying t
 
 The rules are written in Korean, for Korean business reports. The chart, screenshot and Word tools work in any language.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/rules-dark.svg">
+  <img alt="Rule files: structure, style, exhibits, document, checklist" src=".github/assets/rules-light.svg" width="100%">
+</picture>
+
+<details>
+<summary>Open the rule files</summary>
+<br>
+
 | File | Covers |
 | --- | --- |
 | [`1-structure.md`](skills/consulting-report/rules/1-structure.md) | The pyramid principle: answer on top, MECE groups, SCQA introductions, data blocks that end in an action, one level per list, a lean appendix |
@@ -112,6 +115,8 @@ The rules are written in Korean, for Korean business reports. The chart, screens
 | [`3-exhibits.md`](skills/consulting-report/rules/3-exhibits.md) | The exhibit grammar, which chart to pick, the JSON format, screenshot crops and marks |
 | [`4-document.md`](skills/consulting-report/rules/4-document.md) | The Word layout, the build script, and how to add to a document a person already edited |
 | [`5-checklist.md`](skills/consulting-report/rules/5-checklist.md) | What to check before the report leaves your hands |
+
+</details>
 
 ## Exhibits
 

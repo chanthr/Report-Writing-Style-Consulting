@@ -11,4 +11,4 @@
 1. [ ] No client names, real report numbers, private screenshots or secrets
 2. [ ] If a tool changed, the example outputs in `skills/consulting-report/examples/out/` are rebuilt
 3. [ ] If a rule changed, `SKILL.md`, `README.md` and `README.ko.md` still match it
-4. [ ] If you changed banner or flow text, you re-ran `python3 .github/assets/make.py` (and `--spec .github/assets/readme-art.ko.json`)
+4. [ ] If you changed banner or flow text, you re-ran `uv run .github/assets/make.py` (and `--spec .github/assets/readme-art.ko.json`)
